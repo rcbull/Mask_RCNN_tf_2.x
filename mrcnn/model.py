@@ -20,8 +20,10 @@ import tensorflow.compat.v1 as tf
 # import tensorflow as tf
 import keras
 import keras.backend as K
-import keras.layers as KL
-import keras.engine as KE
+# import keras.layers as KL
+# from keras.layers import Layer
+import keras.engine.topology as KE
+# import keras.engine as KE
 import keras.models as KM
 
 from mrcnn import utils
@@ -51,7 +53,7 @@ def log(text, array=None):
     print(text)
 
 
-class BatchNorm(KL.BatchNormalization):
+class BatchNorm(tf.keras.layers.BatchNormalization):
     """Extends the Keras BatchNormalization class to allow a central place
     to make changes if needed.
 
